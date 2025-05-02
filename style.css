@@ -1,0 +1,123 @@
+:root {
+  --bg: #f2f2f2;
+  --text: #333;
+  --card: white;
+  --primary: #007bff;
+  --delete: red;
+}
+
+body.dark {
+  --bg: #1e1e1e;
+  --text: #f0f0f0;
+  --card: #2c2c2c;
+  --primary: #4ea1ff;
+  --delete: #ff6b6b;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  padding: 50px;
+  text-align: center;
+  transition: background 0.3s, color 0.3s;
+}
+
+.todo-container {
+  background: var(--card);
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 450px;
+  margin: auto;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.top-controls {
+  display: flex;
+  gap: 10px;
+}
+
+#taskInput {
+  flex: 1;
+  padding: 10px;
+}
+
+#addTaskBtn {
+  padding: 10px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#searchInput {
+  width: 70%;
+  margin: 10px 0;
+  padding: 8px;
+  font-size: 14px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: var(--bg);
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  border-left: 5px solid var(--primary);
+  transition: background 0.3s;
+  border-radius: 5px;
+}
+
+li.done span {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+li input[type="checkbox"] {
+  margin-right: 10px;
+  transform: scale(1.2);
+}
+
+li span {
+  flex-grow: 1;
+  text-align: left;
+}
+
+.deleteBtn {
+  background: none;
+  border: none;
+  color: var(--delete);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.filter-section {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filter-btn, #toggleDarkMode {
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  background: #e0e0e0;
+}
+
+.filter-btn.active {
+  background: var(--primary);
+  color: white;
+}
